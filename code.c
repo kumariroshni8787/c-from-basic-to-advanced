@@ -1,23 +1,26 @@
 #include <stdio.h>
 
-int factorial(int n)
+void swap(int *a, int *b)
 {
-    if(n == 0 || n == 1)
-    {
-        return 1;
-    }
+    int temp;
 
-    return n * factorial(n - 1);
+    temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
 int main()
 {
-    int num;
+    int x, y;
 
-    printf("Enter a number: ");
-    scanf("%d", &num);
+    printf("Enter two numbers: ");
+    scanf("%d %d", &x, &y);
 
-    printf("Factorial of %d = %d", num, factorial(num));
+    printf("Before Swap: x = %d, y = %d\n", x, y);
+
+    swap(&x, &y);
+
+    printf("After Swap: x = %d, y = %d\n", x, y);
 
     return 0;
 }

@@ -1271,3 +1271,239 @@ Understood function declaration, definition, and function calls.
 Studied different types of functions.
 Learned the concept of recursion.
 Implemented factorial using recursion.
+
+# Day 6 - Pointers in C
+
+## Introduction
+
+A pointer is a variable that stores the memory address of another variable.
+
+Pointers are one of the most powerful features of C and are widely used for memory management, arrays, functions, and dynamic data structures.
+
+---
+
+## 1. What is a Pointer?
+
+A pointer stores the address of a variable instead of the actual value.
+
+### Example
+
+```c
+int age = 20;
+```
+
+Here:
+
+* `age` stores the value `20`
+* `&age` gives the memory address of `age`
+
+---
+
+## 2. Declaring a Pointer
+
+### Syntax
+
+```c
+data_type *pointer_name;
+```
+
+### Example
+
+```c
+int *ptr;
+float *fptr;
+char *cptr;
+```
+
+---
+
+## 3. Pointer Initialization
+
+A pointer should store the address of a variable.
+
+```c
+int age = 20;
+int *ptr = &age;
+```
+
+### Explanation
+
+| Expression | Meaning                      |
+| ---------- | ---------------------------- |
+| age        | Value stored in variable     |
+| &age       | Address of variable          |
+| ptr        | Stores address of age        |
+| *ptr       | Value stored at that address |
+
+---
+
+## 4. Address Operator (&)
+
+The `&` operator returns the memory address of a variable.
+
+### Example
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int num = 10;
+
+    printf("%p", &num);
+
+    return 0;
+}
+```
+
+---
+
+## 5. Dereference Operator (*)
+
+The `*` operator is used to access the value stored at an address.
+
+### Example
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int num = 10;
+    int *ptr = &num;
+
+    printf("%d", *ptr);
+
+    return 0;
+}
+```
+
+### Output
+
+```text
+10
+```
+
+---
+
+## 6. Complete Pointer Example
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int num = 25;
+    int *ptr = &num;
+
+    printf("Value of num = %d\n", num);
+    printf("Address of num = %p\n", &num);
+    printf("Pointer value = %p\n", ptr);
+    printf("Value using pointer = %d\n", *ptr);
+
+    return 0;
+}
+```
+
+---
+
+## 7. Changing Value Using Pointer
+
+A pointer can modify the original variable.
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int num = 10;
+    int *ptr = &num;
+
+    *ptr = 50;
+
+    printf("%d", num);
+
+    return 0;
+}
+```
+
+### Output
+
+```text
+50
+```
+
+---
+
+## 8. Pointer and Function
+
+Pointers allow functions to modify original variables.
+
+### Example
+
+```c
+#include <stdio.h>
+
+void changeValue(int *x)
+{
+    *x = 100;
+}
+
+int main()
+{
+    int num = 10;
+
+    changeValue(&num);
+
+    printf("%d", num);
+
+    return 0;
+}
+```
+
+### Output
+
+```text
+100
+```
+
+---
+
+## 9. NULL Pointer
+
+A pointer that points to nothing is called a NULL pointer.
+
+```c
+int *ptr = NULL;
+```
+
+Using NULL pointers helps avoid unexpected behavior.
+
+---
+
+## Key Points
+
+* A pointer stores the address of another variable.
+* `&` gives the address of a variable.
+* `*` accesses the value stored at an address.
+* Pointers can modify original variables.
+* Pointers are useful when passing variables to functions.
+* Initialize unused pointers with `NULL`.
+
+---
+
+## Practice Questions
+
+1. Create a pointer and print the address of a variable.
+2. Print a variable's value using a pointer.
+3. Change a variable's value using a pointer.
+4. Create a function that swaps two numbers using pointers.
+5. Pass a variable to a function using pointers and modify its value.
+
+---
+📌 Day 6 Summary
+Learned what pointers are and why they are used.
+Understood the address operator (&).
+Learned the dereference operator (*).
+Accessed and modified variables through pointers.
+Passed variables to functions using pointers.
