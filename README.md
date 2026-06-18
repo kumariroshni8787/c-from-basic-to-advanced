@@ -1026,3 +1026,248 @@ Studied while, do-while, and for loops.
 Understood the difference between loop types.
 Learned how break and continue affect loop execution.
 Practiced repeating tasks efficiently using loops.
+
+
+
+
+# Day 5 - Functions and Recursion in C
+
+## Introduction
+
+Functions are blocks of code designed to perform a specific task. They help make programs modular, reusable, and easier to understand.
+
+Recursion is a technique where a function calls itself to solve a problem.
+
+---
+
+## 1. What is a Function?
+
+A function is a collection of statements that performs a specific task.
+
+### Benefits of Functions
+
+* Code reusability
+* Better organization
+* Easier debugging
+* Reduces code duplication
+
+---
+
+## 2. Function Syntax
+
+```c
+return_type function_name(parameters)
+{
+    // code
+    return value;
+}
+```
+
+### Example
+
+```c
+#include <stdio.h>
+
+void greet()
+{
+    printf("Welcome to C Programming!");
+}
+
+int main()
+{
+    greet();
+
+    return 0;
+}
+```
+
+---
+
+## 3. Function Declaration, Definition, and Call
+
+### Declaration (Prototype)
+
+```c
+int add(int, int);
+```
+
+### Definition
+
+```c
+int add(int a, int b)
+{
+    return a + b;
+}
+```
+
+### Function Call
+
+```c
+int result = add(10, 20);
+```
+
+---
+
+## 4. Types of Functions
+
+### A) No Arguments, No Return Value
+
+```c
+void display()
+{
+    printf("Hello");
+}
+```
+
+### B) Arguments, No Return Value
+
+```c
+void display(int age)
+{
+    printf("%d", age);
+}
+```
+
+### C) No Arguments, Return Value
+
+```c
+int getNumber()
+{
+    return 10;
+}
+```
+
+### D) Arguments and Return Value
+
+```c
+int add(int a, int b)
+{
+    return a + b;
+}
+```
+
+---
+
+## 5. Example: Sum of Two Numbers
+
+```c
+#include <stdio.h>
+
+int add(int a, int b)
+{
+    return a + b;
+}
+
+int main()
+{
+    int num1, num2;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    printf("Sum = %d", add(num1, num2));
+
+    return 0;
+}
+```
+
+---
+
+## 6. Recursion
+
+Recursion is a process in which a function calls itself.
+
+### Basic Structure
+
+```c
+void function()
+{
+    function();
+}
+```
+
+A recursive function must have a **base condition**, otherwise it will run forever.
+
+---
+
+## 7. Factorial Using Recursion
+
+### Formula
+
+```text
+5! = 5 × 4 × 3 × 2 × 1
+```
+
+### Recursive Program
+
+```c
+#include <stdio.h>
+
+int factorial(int n)
+{
+    if(n == 0 || n == 1)
+    {
+        return 1;
+    }
+
+    return n * factorial(n - 1);
+}
+
+int main()
+{
+    int num;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    printf("Factorial = %d", factorial(num));
+
+    return 0;
+}
+```
+
+### Example
+
+```text
+Input: 5
+Output: 120
+```
+
+---
+
+## 8. Recursion vs Loop
+
+| Recursion                | Loop                |
+| ------------------------ | ------------------- |
+| Function calls itself    | Repeats using loops |
+| Easier for some problems | Usually faster      |
+| Uses more memory         | Uses less memory    |
+
+---
+
+## Key Points
+
+* Functions divide a program into smaller parts.
+* Functions can take arguments and return values.
+* Function declaration informs the compiler about a function.
+* Recursion means a function calls itself.
+* Every recursive function must have a base condition.
+* Factorial is a common example of recursion.
+
+---
+
+## Practice Questions
+
+1. Create a function to find the square of a number.
+2. Create a function to find the largest of two numbers.
+3. Write a function to calculate the area of a circle.
+4. Find the factorial of a number using recursion.
+5. Print numbers from 1 to N using recursion.
+
+---
+📌 Day 5 Summary
+Learned about functions and their advantages.
+Understood function declaration, definition, and function calls.
+Studied different types of functions.
+Learned the concept of recursion.
+Implemented factorial using recursion.
