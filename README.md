@@ -185,3 +185,307 @@ Studied basic C data types (int, float, char, double).
 Learned how to display output using printf().
 Learned how to take user input using scanf().
 Understood format specifiers and the use of the & operator.
+
+# Day 2 - Instructions and Operators in C
+
+## Introduction
+
+A C program is made up of instructions that tell the computer what to do. Operators are symbols used to perform operations on data and variables.
+
+---
+
+## 1. Instructions in C
+
+Instructions are statements executed by the computer.
+
+### Types of Instructions
+
+### A) Type Declaration Instruction
+
+Used to declare variables before using them.
+
+```c
+int age;
+float salary;
+char grade;
+```
+
+### B) Arithmetic Instruction
+
+Used to perform mathematical calculations.
+
+```c
+int sum = 10 + 20;
+int difference = 20 - 10;
+int product = 10 * 5;
+int quotient = 20 / 4;
+```
+
+### C) Control Instruction
+
+Used to control the flow of a program.
+
+Examples:
+
+```c
+if (age >= 18)
+{
+    printf("Adult");
+}
+```
+
+```c
+for(int i = 1; i <= 5; i++)
+{
+    printf("%d\n", i);
+}
+```
+
+---
+
+## 2. Operators in C
+
+Operators are special symbols used to perform operations on variables and values.
+
+---
+
+## A) Arithmetic Operators
+
+| Operator | Meaning             | Example |
+| -------- | ------------------- | ------- |
+| +        | Addition            | a + b   |
+| -        | Subtraction         | a - b   |
+| *        | Multiplication      | a * b   |
+| /        | Division            | a / b   |
+| %        | Modulus (Remainder) | a % b   |
+
+### Example
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int a = 10, b = 3;
+
+    printf("Addition = %d\n", a + b);
+    printf("Subtraction = %d\n", a - b);
+    printf("Multiplication = %d\n", a * b);
+    printf("Division = %d\n", a / b);
+    printf("Remainder = %d\n", a % b);
+
+    return 0;
+}
+```
+
+---
+
+## B) Relational Operators
+
+Used to compare values.
+
+| Operator | Meaning                  |
+| -------- | ------------------------ |
+| ==       | Equal to                 |
+| !=       | Not equal to             |
+| >        | Greater than             |
+| <        | Less than                |
+| >=       | Greater than or equal to |
+| <=       | Less than or equal to    |
+
+### Example
+
+```c
+int a = 10;
+int b = 20;
+
+printf("%d", a < b);
+```
+
+Output:
+
+```text
+1
+```
+
+(1 = True, 0 = False)
+
+---
+
+## C) Logical Operators
+
+Used to combine conditions.
+
+| Operator | Meaning |   |    |
+| -------- | ------- | - | -- |
+| &&       | AND     |   |    |
+|          |         |   | OR |
+| !        | NOT     |   |    |
+
+### Example
+
+```c
+int age = 20;
+
+if(age > 18 && age < 60)
+{
+    printf("Eligible");
+}
+```
+
+---
+
+## D) Assignment Operators
+
+Used to assign values.
+
+| Operator | Example |
+| -------- | ------- |
+| =        | a = 10  |
+| +=       | a += 5  |
+| -=       | a -= 5  |
+| *=       | a *= 5  |
+| /=       | a /= 5  |
+
+### Example
+
+```c
+int a = 10;
+
+a += 5;
+
+printf("%d", a);
+```
+
+Output:
+
+```text
+15
+```
+
+---
+
+## E) Increment and Decrement Operators
+
+### Increment (++)
+
+Increases value by 1.
+
+```c
+int a = 5;
+a++;
+```
+
+Value becomes:
+
+```text
+6
+```
+
+### Decrement (--)
+
+Decreases value by 1.
+
+```c
+int a = 5;
+a--;
+```
+
+Value becomes:
+
+```text
+4
+```
+
+---
+
+## Pre and Post Increment
+
+### Pre Increment
+
+```c
+int a = 5;
+int b = ++a;
+```
+
+Result:
+
+```text
+a = 6
+b = 6
+```
+
+### Post Increment
+
+```c
+int a = 5;
+int b = a++;
+```
+
+Result:
+
+```text
+a = 6
+b = 5
+```
+
+---
+
+## Operator Precedence (Basic)
+
+Priority order:
+
+```text
+()
+*, /, %
++, -
+<, >, <=, >=
+==, !=
+&&
+||
+=
+```
+
+Example:
+
+```c
+int result = 10 + 5 * 2;
+```
+
+Output:
+
+```text
+20
+```
+
+Because multiplication is performed first.
+
+---
+
+## Key Points
+
+* Instructions are statements executed by the program.
+* Operators perform calculations and comparisons.
+* Arithmetic operators are used for mathematical operations.
+* Relational operators return true (1) or false (0).
+* Logical operators combine conditions.
+* Assignment operators simplify value updates.
+* Increment and decrement operators change values by 1.
+* Operator precedence determines execution order.
+
+---
+
+## Practice Questions
+
+1. Take two numbers and perform all arithmetic operations.
+2. Check whether one number is greater than another.
+3. Use logical operators to check age eligibility.
+4. Write a program using += and -= operators.
+5. Demonstrate pre-increment and post-increment with examples.
+
+---
+📌 Day 2 Summary
+Learned different types of instructions in C.
+Studied arithmetic, relational, logical, assignment, increment, and decrement operators.
+Understood the difference between pre-increment and post-increment.
+Learned basic operator precedence.
