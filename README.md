@@ -771,3 +771,258 @@ Learned decision-making in C using conditional statements.
 Studied if, if-else, else-if, and nested if.
 Learned how to use the switch statement.
 Understood the difference between if-else and switch.
+
+# Day 4 - Loop Control Statements in C
+
+## Introduction
+
+Loop control statements are used to execute a block of code repeatedly until a condition becomes false.
+
+Loops help reduce code repetition and make programs more efficient.
+
+---
+
+## 1. while Loop
+
+The `while` loop checks the condition first and then executes the code.
+
+### Syntax
+
+```c
+while(condition)
+{
+    // code
+}
+```
+
+### Example
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int i = 1;
+
+    while(i <= 5)
+    {
+        printf("%d\n", i);
+        i++;
+    }
+
+    return 0;
+}
+```
+
+### Output
+
+```text
+1
+2
+3
+4
+5
+```
+
+---
+
+## 2. do-while Loop
+
+The `do-while` loop executes the code once before checking the condition.
+
+### Syntax
+
+```c
+do
+{
+    // code
+}
+while(condition);
+```
+
+### Example
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int i = 1;
+
+    do
+    {
+        printf("%d\n", i);
+        i++;
+    }
+    while(i <= 5);
+
+    return 0;
+}
+```
+
+---
+
+## 3. for Loop
+
+The `for` loop is commonly used when the number of iterations is known.
+
+### Syntax
+
+```c
+for(initialization; condition; update)
+{
+    // code
+}
+```
+
+### Example
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int i;
+
+    for(i = 1; i <= 5; i++)
+    {
+        printf("%d\n", i);
+    }
+
+    return 0;
+}
+```
+
+---
+
+## Comparison of Loops
+
+| Loop     | Condition Check  |
+| -------- | ---------------- |
+| while    | Before execution |
+| do-while | After execution  |
+| for      | Before execution |
+
+---
+
+## 4. break Statement
+
+The `break` statement immediately terminates the loop.
+
+### Example
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int i;
+
+    for(i = 1; i <= 10; i++)
+    {
+        if(i == 5)
+        {
+            break;
+        }
+
+        printf("%d\n", i);
+    }
+
+    return 0;
+}
+```
+
+### Output
+
+```text
+1
+2
+3
+4
+```
+
+---
+
+## 5. continue Statement
+
+The `continue` statement skips the current iteration and moves to the next iteration.
+
+### Example
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int i;
+
+    for(i = 1; i <= 5; i++)
+    {
+        if(i == 3)
+        {
+            continue;
+        }
+
+        printf("%d\n", i);
+    }
+
+    return 0;
+}
+```
+
+### Output
+
+```text
+1
+2
+4
+5
+```
+
+---
+
+## 6. Infinite Loop
+
+A loop that never ends is called an infinite loop.
+
+### Example
+
+```c
+while(1)
+{
+    printf("Hello");
+}
+```
+
+Use carefully because the loop will run forever unless stopped manually.
+
+---
+
+## Key Points
+
+* Loops are used to repeat a block of code.
+* `while` checks the condition before execution.
+* `do-while` executes at least once.
+* `for` loop is best when the number of repetitions is known.
+* `break` exits the loop immediately.
+* `continue` skips the current iteration.
+* Infinite loops run forever.
+
+---
+
+## Practice Questions
+
+1. Print numbers from 1 to 10 using a `while` loop.
+2. Print numbers from 10 to 1 using a `for` loop.
+3. Print the multiplication table of a number.
+4. Find the sum of the first 10 natural numbers.
+5. Print even numbers from 1 to 100.
+6. Demonstrate `break` and `continue` using examples.
+
+---
+📌 Day 4 Summary
+Learned about loop control statements in C.
+Studied while, do-while, and for loops.
+Understood the difference between loop types.
+Learned how break and continue affect loop execution.
+Practiced repeating tasks efficiently using loops.

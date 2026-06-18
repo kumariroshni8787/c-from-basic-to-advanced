@@ -2,22 +2,14 @@
 
 int main()
 {
-    int num;
+    int num, i;
 
     printf("Enter a number: ");
     scanf("%d", &num);
 
-    if(num > 0)
+    for(i = 1; i <= 10; i++)
     {
-        printf("Positive Number");
-    }
-    else if(num < 0)
-    {
-        printf("Negative Number");
-    }
-    else
-    {
-        printf("Zero");
+        printf("%d x %d = %d\n", num, i, num * i);
     }
 
     return 0;
