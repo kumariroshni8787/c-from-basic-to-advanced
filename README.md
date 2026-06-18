@@ -2068,3 +2068,267 @@ strcpy()
 strcat()
 strcmp()
 Learned the importance of the null character (\0).
+
+# Day 9 - Structures in C
+
+## Introduction
+
+A structure is a user-defined data type in C that allows us to store different types of data under one name.
+
+Unlike arrays, which store the same data type, structures can store multiple data types together.
+
+Example:
+
+A student has:
+
+* Name → String
+* Roll number → Integer
+* Marks → Float
+
+A structure can store all these values together.
+
+---
+
+# 1. Creating a Structure
+
+### Syntax
+
+```c
+struct structure_name
+{
+    data_type member1;
+    data_type member2;
+};
+```
+
+### Example
+
+```c
+struct Student
+{
+    char name[50];
+    int roll;
+    float marks;
+};
+```
+
+---
+
+# 2. Declaring Structure Variables
+
+After creating a structure, we create variables of that structure.
+
+Example:
+
+```c
+struct Student s1;
+```
+
+Here:
+
+* `Student` → structure name
+* `s1` → structure variable
+
+---
+
+# 3. Accessing Structure Members
+
+The dot (`.`) operator is used to access structure members.
+
+Example:
+
+```c
+s1.roll = 101;
+s1.marks = 95.5;
+```
+
+---
+
+# 4. Structure Example Program
+
+```c
+#include <stdio.h>
+
+struct Student
+{
+    char name[50];
+    int roll;
+    float marks;
+};
+
+int main()
+{
+    struct Student s1;
+
+    printf("Enter name: ");
+    scanf("%s", s1.name);
+
+    printf("Enter roll number: ");
+    scanf("%d", &s1.roll);
+
+    printf("Enter marks: ");
+    scanf("%f", &s1.marks);
+
+    printf("\nStudent Details\n");
+
+    printf("Name: %s\n", s1.name);
+    printf("Roll: %d\n", s1.roll);
+    printf("Marks: %.2f\n", s1.marks);
+
+    return 0;
+}
+```
+
+---
+
+# 5. Initializing Structure
+
+We can initialize a structure while declaring it.
+
+Example:
+
+```c
+struct Student s1 = {"Amit", 101, 90.5};
+```
+
+---
+
+# 6. Array of Structures
+
+We can create multiple structure variables using an array.
+
+Example:
+
+```c
+struct Student students[3];
+```
+
+This can store data of 3 students.
+
+---
+
+# Example: Array of Structures
+
+```c
+#include <stdio.h>
+
+struct Student
+{
+    int roll;
+    float marks;
+};
+
+int main()
+{
+    struct Student s[3];
+
+    for(int i = 0; i < 3; i++)
+    {
+        printf("Enter roll and marks: ");
+        scanf("%d %f", &s[i].roll, &s[i].marks);
+    }
+
+    printf("\nStudent Data\n");
+
+    for(int i = 0; i < 3; i++)
+    {
+        printf("Roll: %d Marks: %.2f\n",
+        s[i].roll,
+        s[i].marks);
+    }
+
+    return 0;
+}
+```
+
+---
+
+# 7. Nested Structure
+
+A structure inside another structure is called a nested structure.
+
+Example:
+
+```c
+struct Date
+{
+    int day;
+    int month;
+    int year;
+};
+
+struct Student
+{
+    char name[20];
+    struct Date birth;
+};
+```
+
+---
+
+# 8. Structure with Function
+
+Structures can be passed to functions.
+
+Example:
+
+```c
+#include <stdio.h>
+
+struct Student
+{
+    int roll;
+};
+
+void display(struct Student s)
+{
+    printf("Roll = %d", s.roll);
+}
+
+int main()
+{
+    struct Student s1 = {101};
+
+    display(s1);
+
+    return 0;
+}
+```
+
+---
+
+# Structure vs Array
+
+| Array                 | Structure                   |
+| --------------------- | --------------------------- |
+| Stores same data type | Stores different data types |
+| Example: int array    | Example: student data       |
+| Uses index            | Uses member names           |
+
+---
+
+# Key Points
+
+* Structure is a user-defined data type.
+* It groups different data types together.
+* Members are accessed using the dot (`.`) operator.
+* Structures can contain arrays and other structures.
+* Structures are useful for storing real-world data.
+
+---
+
+# Practice Questions
+
+1. Create a structure for storing employee details.
+2. Store and display student information using structure.
+3. Create an array of structures for 5 students.
+4. Pass a structure to a function.
+5. Create a nested structure for student address details.
+
+---
+📌 Day 9 Summary
+Learned the concept of structures in C.
+Learned how to create and use structures.
+Studied structure variables and member access.
+Learned array of structures.
+Learned nested structures and passing structures to functions.
