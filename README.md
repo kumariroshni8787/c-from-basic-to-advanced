@@ -1746,3 +1746,325 @@ Studied array declaration and initialization.
 Accessed array elements using indexes.
 Used loops with arrays for input and output.
 Found the sum and largest element of an array.
+
+# Day 8 - Strings in C
+
+## Introduction
+
+A string is a collection of characters stored in a character array.
+
+In C, strings are terminated by a special character called the **null character (`\0`)**.
+
+Example:
+
+```c
+char name[] = "Hello";
+```
+
+Memory:
+
+```text
+H  e  l  l  o  \0
+```
+
+---
+
+## 1. Declaring a String
+
+### Syntax
+
+```c
+char string_name[size];
+```
+
+### Example
+
+```c
+char name[20];
+```
+
+---
+
+## 2. Initializing a String
+
+### Method 1
+
+```c
+char name[] = "Rahul";
+```
+
+### Method 2
+
+```c
+char name[6] = {'R','a','h','u','l','\0'};
+```
+
+---
+
+## 3. Taking String Input
+
+### Using scanf()
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    char name[20];
+
+    printf("Enter your name: ");
+    scanf("%s", name);
+
+    printf("Name: %s", name);
+
+    return 0;
+}
+```
+
+Output:
+
+```text
+Enter your name: Amit
+Name: Amit
+```
+
+### Problem with scanf()
+
+`scanf("%s")` cannot take spaces.
+
+Example:
+
+Input:
+
+```text
+Amit Kumar
+```
+
+Output:
+
+```text
+Amit
+```
+
+Only the first word is stored.
+
+---
+
+## 4. Using fgets() for String Input
+
+`fgets()` can take spaces.
+
+Example:
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    char name[50];
+
+    printf("Enter your full name: ");
+    fgets(name, sizeof(name), stdin);
+
+    printf("Name: %s", name);
+
+    return 0;
+}
+```
+
+---
+
+## 5. Printing Strings
+
+Using `printf()`:
+
+```c
+char name[] = "C Programming";
+
+printf("%s", name);
+```
+
+Using `puts()`:
+
+```c
+puts(name);
+```
+
+---
+
+# String Functions
+
+C provides string functions through the header file:
+
+```c
+#include <string.h>
+```
+
+---
+
+## 6. strlen()
+
+Used to find the length of a string.
+
+Example:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char name[] = "Hello";
+
+    printf("%d", strlen(name));
+
+    return 0;
+}
+```
+
+Output:
+
+```text
+5
+```
+
+---
+
+## 7. strcpy()
+
+Used to copy one string into another.
+
+Example:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char source[] = "Hello";
+    char destination[20];
+
+    strcpy(destination, source);
+
+    printf("%s", destination);
+
+    return 0;
+}
+```
+
+Output:
+
+```text
+Hello
+```
+
+---
+
+## 8. strcat()
+
+Used to join two strings.
+
+Example:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char first[20] = "Hello ";
+    char second[] = "World";
+
+    strcat(first, second);
+
+    printf("%s", first);
+
+    return 0;
+}
+```
+
+Output:
+
+```text
+Hello World
+```
+
+---
+
+## 9. strcmp()
+
+Used to compare two strings.
+
+Example:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char a[] = "Hello";
+    char b[] = "Hello";
+
+    if(strcmp(a,b)==0)
+    {
+        printf("Strings are equal");
+    }
+    else
+    {
+        printf("Strings are not equal");
+    }
+
+    return 0;
+}
+```
+
+---
+
+## String vs Character
+
+| Character            | String                     |
+| -------------------- | -------------------------- |
+| Stores one character | Stores multiple characters |
+| Uses single quotes   | Uses double quotes         |
+| Example: `'A'`       | Example: `"ABC"`           |
+
+---
+
+## Key Points
+
+* Strings are character arrays.
+* Every string ends with `\0`.
+* `%s` is used to print strings.
+* `fgets()` is safer for taking string input with spaces.
+* String functions are available in `string.h`.
+* Common functions:
+
+  * `strlen()` → length
+  * `strcpy()` → copy
+  * `strcat()` → combine
+  * `strcmp()` → compare
+
+---
+
+## Practice Questions
+
+1. Take a string input and print it.
+2. Find the length of a string without using `strlen()`.
+3. Copy one string into another.
+4. Join two strings.
+5. Compare two strings.
+6. Count vowels in a string.
+
+---
+📌 Day 8 Summary
+Learned what strings are in C.
+Understood strings as character arrays.
+Learned string input/output methods.
+Studied important string functions:
+strlen()
+strcpy()
+strcat()
+strcmp()
+Learned the importance of the null character (\0).

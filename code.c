@@ -2,27 +2,18 @@
 
 int main()
 {
-    int arr[5];
-    int i, largest;
+    char str[100];
+    int i = 0;
 
-    printf("Enter 5 numbers:\n");
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
 
-    for(i = 0; i < 5; i++)
+    while(str[i] != '\0')
     {
-        scanf("%d", &arr[i]);
+        i++;
     }
 
-    largest = arr[0];
-
-    for(i = 1; i < 5; i++)
-    {
-        if(arr[i] > largest)
-        {
-            largest = arr[i];
-        }
-    }
-
-    printf("Largest number = %d", largest);
+    printf("Length = %d", i - 1);
 
     return 0;
 }
