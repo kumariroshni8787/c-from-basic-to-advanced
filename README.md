@@ -489,3 +489,285 @@ Learned different types of instructions in C.
 Studied arithmetic, relational, logical, assignment, increment, and decrement operators.
 Understood the difference between pre-increment and post-increment.
 Learned basic operator precedence.
+
+
+# Day 3 - Conditional Statements in C
+
+## Introduction
+
+Conditional statements help a program make decisions based on conditions.
+
+They allow the program to execute different blocks of code depending on whether a condition is true or false.
+
+---
+
+## 1. if Statement
+
+The `if` statement executes a block of code only when the condition is true.
+
+### Syntax
+
+```c
+if(condition)
+{
+    // code
+}
+```
+
+### Example
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int age = 20;
+
+    if(age >= 18)
+    {
+        printf("You are eligible to vote.");
+    }
+
+    return 0;
+}
+```
+
+---
+
+## 2. if-else Statement
+
+Used when there are two possible outcomes.
+
+### Syntax
+
+```c
+if(condition)
+{
+    // code if true
+}
+else
+{
+    // code if false
+}
+```
+
+### Example
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int number;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if(number % 2 == 0)
+    {
+        printf("Even Number");
+    }
+    else
+    {
+        printf("Odd Number");
+    }
+
+    return 0;
+}
+```
+
+---
+
+## 3. else-if Ladder
+
+Used when multiple conditions need to be checked.
+
+### Syntax
+
+```c
+if(condition1)
+{
+    // code
+}
+else if(condition2)
+{
+    // code
+}
+else
+{
+    // code
+}
+```
+
+### Example
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int marks;
+
+    printf("Enter marks: ");
+    scanf("%d", &marks);
+
+    if(marks >= 90)
+    {
+        printf("Grade A");
+    }
+    else if(marks >= 75)
+    {
+        printf("Grade B");
+    }
+    else if(marks >= 50)
+    {
+        printf("Grade C");
+    }
+    else
+    {
+        printf("Fail");
+    }
+
+    return 0;
+}
+```
+
+---
+
+## 4. Nested if
+
+An `if` statement inside another `if` statement.
+
+### Example
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int age = 20;
+    int citizen = 1;
+
+    if(age >= 18)
+    {
+        if(citizen == 1)
+        {
+            printf("Eligible to vote");
+        }
+    }
+
+    return 0;
+}
+```
+
+---
+
+## 5. switch Statement
+
+Used when there are multiple fixed choices.
+
+### Syntax
+
+```c
+switch(expression)
+{
+    case value1:
+        // code
+        break;
+
+    case value2:
+        // code
+        break;
+
+    default:
+        // code
+}
+```
+
+### Example
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int day;
+
+    printf("Enter day number (1-7): ");
+    scanf("%d", &day);
+
+    switch(day)
+    {
+        case 1:
+            printf("Monday");
+            break;
+
+        case 2:
+            printf("Tuesday");
+            break;
+
+        case 3:
+            printf("Wednesday");
+            break;
+
+        case 4:
+            printf("Thursday");
+            break;
+
+        case 5:
+            printf("Friday");
+            break;
+
+        case 6:
+            printf("Saturday");
+            break;
+
+        case 7:
+            printf("Sunday");
+            break;
+
+        default:
+            printf("Invalid Day");
+    }
+
+    return 0;
+}
+```
+
+---
+
+## Difference Between if-else and switch
+
+| if-else                                  | switch                                   |
+| ---------------------------------------- | ---------------------------------------- |
+| Works with conditions                    | Works with fixed values                  |
+| Can use relational and logical operators | Cannot use relational operators in cases |
+| Better for complex conditions            | Better for menu-driven programs          |
+
+---
+
+## Key Points
+
+* `if` executes code when a condition is true.
+* `if-else` handles two outcomes.
+* `else-if` ladder handles multiple conditions.
+* Nested `if` means an `if` inside another `if`.
+* `switch` is useful when selecting from multiple fixed options.
+* `break` prevents execution from continuing to the next case.
+
+---
+
+## Practice Questions
+
+1. Check whether a number is positive or negative.
+2. Check whether a number is even or odd.
+3. Find the largest of two numbers using `if-else`.
+4. Display grades using an `else-if` ladder.
+5. Create a simple calculator using `switch`.
+
+---
+📌 Day 3 Summary
+Learned decision-making in C using conditional statements.
+Studied if, if-else, else-if, and nested if.
+Learned how to use the switch statement.
+Understood the difference between if-else and switch.
