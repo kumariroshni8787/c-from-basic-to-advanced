@@ -1507,3 +1507,242 @@ Understood the address operator (&).
 Learned the dereference operator (*).
 Accessed and modified variables through pointers.
 Passed variables to functions using pointers.
+
+
+# Day 7 - Arrays in C
+
+## Introduction
+
+An array is a collection of elements of the same data type stored in contiguous memory locations.
+
+Arrays allow us to store multiple values using a single variable name.
+
+---
+
+## 1. Why Use Arrays?
+
+Without arrays:
+
+```c id="u3x5m1"
+int marks1 = 80;
+int marks2 = 75;
+int marks3 = 90;
+int marks4 = 85;
+int marks5 = 70;
+```
+
+Using an array:
+
+```c id="d1a9q4"
+int marks[5] = {80, 75, 90, 85, 70};
+```
+
+This makes the code shorter and easier to manage.
+
+---
+
+## 2. Declaration of an Array
+
+### Syntax
+
+```c id="f6b2r8"
+data_type array_name[size];
+```
+
+### Example
+
+```c id="c9m7k2"
+int marks[5];
+float prices[10];
+char name[20];
+```
+
+---
+
+## 3. Initialization of an Array
+
+### Method 1
+
+```c id="n4t8w5"
+int numbers[5] = {10, 20, 30, 40, 50};
+```
+
+### Method 2
+
+```c id="q7y3p1"
+int numbers[] = {10, 20, 30, 40, 50};
+```
+
+The compiler automatically determines the size.
+
+---
+
+## 4. Accessing Array Elements
+
+Array indexing starts from **0**.
+
+```c id="h2k6v9"
+int numbers[5] = {10, 20, 30, 40, 50};
+
+printf("%d", numbers[0]);
+```
+
+### Output
+
+```text id="a8j4m7"
+10
+```
+
+---
+
+## 5. Input and Output in Arrays
+
+### Example
+
+```c id="p5x1z6"
+#include <stdio.h>
+
+int main()
+{
+    int marks[5];
+    int i;
+
+    for(i = 0; i < 5; i++)
+    {
+        printf("Enter marks: ");
+        scanf("%d", &marks[i]);
+    }
+
+    printf("\nMarks are:\n");
+
+    for(i = 0; i < 5; i++)
+    {
+        printf("%d ", marks[i]);
+    }
+
+    return 0;
+}
+```
+
+---
+
+## 6. Finding Sum of Array Elements
+
+```c id="r8v3n2"
+#include <stdio.h>
+
+int main()
+{
+    int arr[5] = {10, 20, 30, 40, 50};
+    int i, sum = 0;
+
+    for(i = 0; i < 5; i++)
+    {
+        sum += arr[i];
+    }
+
+    printf("Sum = %d", sum);
+
+    return 0;
+}
+```
+
+### Output
+
+```text id="m6k9t4"
+Sum = 150
+```
+
+---
+
+## 7. Finding Largest Element
+
+```c id="w1q8f7"
+#include <stdio.h>
+
+int main()
+{
+    int arr[5] = {12, 45, 7, 89, 34};
+    int i, largest;
+
+    largest = arr[0];
+
+    for(i = 1; i < 5; i++)
+    {
+        if(arr[i] > largest)
+        {
+            largest = arr[i];
+        }
+    }
+
+    printf("Largest = %d", largest);
+
+    return 0;
+}
+```
+
+---
+
+## 8. One-Dimensional Array
+
+A normal array with a single index is called a one-dimensional array.
+
+```c id="t3p7n1"
+int arr[5];
+```
+
+Indexes:
+
+```text id="k4x8m6"
+arr[0]
+arr[1]
+arr[2]
+arr[3]
+arr[4]
+```
+
+---
+
+## Advantages of Arrays
+
+* Store multiple values under one name.
+* Easy to process using loops.
+* Reduces the number of variables.
+* Improves code readability.
+
+---
+
+## Limitations of Arrays
+
+* Fixed size.
+* Can store only one data type.
+* Size cannot be changed during execution.
+
+---
+
+## Key Points
+
+* Arrays store multiple values of the same data type.
+* Array indexing starts from 0.
+* Arrays are commonly used with loops.
+* Elements are stored in contiguous memory locations.
+* Arrays simplify handling large amounts of data.
+
+---
+
+## Practice Questions
+
+1. Input and display 10 numbers using an array.
+2. Find the sum of all elements in an array.
+3. Find the average of array elements.
+4. Find the largest and smallest element.
+5. Count even and odd numbers in an array.
+6. Reverse an array.
+
+---
+📌 Day 7 Summary
+Learned the concept of arrays in C.
+Studied array declaration and initialization.
+Accessed array elements using indexes.
+Used loops with arrays for input and output.
+Found the sum and largest element of an array.

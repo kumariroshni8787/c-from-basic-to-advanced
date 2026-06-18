@@ -1,26 +1,28 @@
 #include <stdio.h>
 
-void swap(int *a, int *b)
-{
-    int temp;
-
-    temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
 int main()
 {
-    int x, y;
+    int arr[5];
+    int i, largest;
 
-    printf("Enter two numbers: ");
-    scanf("%d %d", &x, &y);
+    printf("Enter 5 numbers:\n");
 
-    printf("Before Swap: x = %d, y = %d\n", x, y);
+    for(i = 0; i < 5; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
 
-    swap(&x, &y);
+    largest = arr[0];
 
-    printf("After Swap: x = %d, y = %d\n", x, y);
+    for(i = 1; i < 5; i++)
+    {
+        if(arr[i] > largest)
+        {
+            largest = arr[i];
+        }
+    }
+
+    printf("Largest number = %d", largest);
 
     return 0;
 }
